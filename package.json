@@ -4,7 +4,8 @@
   "description": "Express middleware for conditional reverse-proxy to enable integrated front-end web development.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "mocha": "mocha",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
