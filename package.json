@@ -1,0 +1,27 @@
+{
+  "name": "integration-proxy",
+  "version": "1.0.0",
+  "description": "Express middleware for conditional reverse-proxy to enable integrated front-end web development.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reykjavikingur/integration-proxy.git"
+  },
+  "keywords": [
+    "express",
+    "middleware",
+    "front-end",
+    "web",
+    "proxy",
+    "integration"
+  ],
+  "author": "Andrew Strader",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reykjavikingur/integration-proxy/issues"
+  },
+  "homepage": "https://github.com/reykjavikingur/integration-proxy#readme"
+}
