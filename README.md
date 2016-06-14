@@ -11,16 +11,23 @@ By running an integration proxy as part of your Node-based development stack, yo
 ## Example
 
 ```
+var express = require('express');
 var integrationProxy = require('integration-proxy');
 
 var app = express();
 
+// serve static assets from local file system
+app.use('/assets', express.static('pub/assets'));
+
+// serve all other requests via proxy
 app.use('/', integrationProxy({
 	target: 'http://example.com',
 	transform: function(url) {
 		return url.replace('http://example.com', 'http://localhost');
 	}
 });
+
+app.listen(80);
 ```
 
 ## API
@@ -44,10 +51,10 @@ Here is what `integration-proxy` does beyond what a basic `http-proxy` configura
 * removes `content-length` headers, if any, to prevent truncation in case HTML changes result in different lengths
 * modifies `set-cookie` headers by removing "Domain" and "Secure" restrictions, to allow clients to accept cookies in spite of differences between local and remote origins
 * applies transform to:
-* * `origin` header
-* * `location` headers
-* * `A@HREF` attributes
-* * `FORM@ACTION` attributes
+	* `origin` header
+	* `location` headers
+	* `A@HREF` attributes
+	* `FORM@ACTION` attributes
 
 ## Caveats
 
